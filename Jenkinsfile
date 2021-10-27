@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Helm install command'
-                helm install aplikacja .
+                sh 'helm install aplikacja .'
+                
                 
             }
         }
