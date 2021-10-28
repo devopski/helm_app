@@ -2,23 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('HELM') {
             steps {
-                echo 'Helm install command'
-                sh ' helm install abcd aplikacja/'
+                echo 'Helm upgrade command'
+                sh 'helm upgrade --set containerImage=${params.imageName} abcd aplikacja/'  
                 
-                
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
+
     }
 }
