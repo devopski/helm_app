@@ -5,7 +5,7 @@ pipeline {
         stage('HELM') {
             steps {
                 echo 'Helm upgrade command'
-                sh 'helm upgrade --set containerImage=${params.imageName} abcd aplikacja/'  
+                sh 'helm upgrade --set containerImage=${imageName} abcd aplikacja/'  
                 
             }
         }
